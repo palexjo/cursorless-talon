@@ -121,7 +121,7 @@ default_values = {
     "swap_action": {"swap": "swapTargets"},
     "move_bring_action": {"bring": "replaceWithTarget", "move": "moveToTarget"},
     "wrap_action": {"wrap": "wrapWithPairedDelimiter"},
-    "insert_snippet_action": {"snip": "insertSnippet"},
+    "insert_snippet_action": {"snippet": "insertSnippet"},
     "reformat_action": {"format": "applyFormatter"},
 }
 
