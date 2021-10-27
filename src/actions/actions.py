@@ -54,7 +54,11 @@ callbacks = [
 callbacks_map = {callback.identifier: callback.callback for callback in callbacks}
 
 
-mod.list("cursorless_simple_action", desc="Supported actions for cursorless navigation")
+mod.list("cursorless_simple_action", desc="Supported actions for cursorless")
+mod.list(
+    "cursorless_positional_action",
+    desc="Supported actions for cursorless that expect a positional target",
+)
 
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
@@ -78,7 +82,6 @@ simple_actions = {
     "float": "insertEmptyLineAfter",
     "fold": "foldRegion",
     "indent": "indentLine",
-    "paste to": "pasteFromClipboard",
     "post": "setSelectionAfter",
     "pour": "editNewLineAfter",
     "pre": "setSelectionBefore",
@@ -90,6 +93,12 @@ simple_actions = {
     "unfold": "unfoldRegion",
     **{action.term: action.identifier for action in makeshift_actions},
     **{callback.term: callback.identifier for callback in callbacks},
+}
+
+# NOTE: Please do not change these dicts.  Use the CSVs for customization.
+# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+positional_actions = {
+    "paste": "pasteFromClipboard",
 }
 
 
@@ -118,6 +127,7 @@ def run_makeshift_action(action: str, targets: dict):
 # See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
 default_values = {
     "simple_action": simple_actions,
+    "positional_action": positional_actions,
     "swap_action": {"swap": "swapTargets"},
     "move_bring_action": {"bring": "replaceWithTarget", "move": "moveToTarget"},
     "wrap_action": {"wrap": "wrapWithPairedDelimiter"},
