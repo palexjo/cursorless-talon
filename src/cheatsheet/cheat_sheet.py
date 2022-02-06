@@ -13,7 +13,9 @@ mod = Module()
 mod.mode("cursorless_cheat_sheet", "Mode for showing cursorless cheat sheet gui")
 cheat_sheet = None
 
-instructions_url = "https://github.com/pokey/cursorless-talon/tree/main/docs"
+instructions_url = (
+    "https://github.com/cursorless-dev/cursorless-vscode/tree/main/docs/user"
+)
 instructions_text = "Full docs"
 line_height = 34
 outer_padding = 27
@@ -161,7 +163,7 @@ class CheatSheet:
         self.draw_items(canvas, items)
 
     def draw_multicolumn_section(
-        self, canvas, items, column_names: str, scopes_limit=24
+        self, canvas, items, column_names: str, scopes_limit=25
     ):
         items_0 = slice_dict(items, 0, scopes_limit)
         items_1 = slice_dict(items, scopes_limit)
