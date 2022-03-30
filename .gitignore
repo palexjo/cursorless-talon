@@ -1,3 +1,5 @@
 *.flac
 data/
 .vscode/settings.json
+.vscode/.DS_Store
+.DS_Store
